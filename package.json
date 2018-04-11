@@ -1,0 +1,8 @@
+{
+  "name": "gwwc-data-import",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:centre-for-effective-altruism/gwwc-data-import.git",
+  "author": "<dev@colophonemes.com>",
+  "license": "MIT"
+}
