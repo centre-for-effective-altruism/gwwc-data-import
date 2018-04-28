@@ -6,12 +6,15 @@
   "author": "<dev@colophonemes.com>",
   "scripts": {
     "start": "node index",
-    "start:verbose": "DEBUG=gwwc-data-import node index"
+    "all": "yarn run start && yarn run import",
+    "import": "pv gwwc_import.sql | psql  -1 -v ON_ERROR_STOP=1 parfit >> /dev/null",
+    "download": "pg_dump -h parfit-read-replica-01.cm4g2jxq8i8x.us-east-1.rds.amazonaws.com --port=5432 --db=parfit --user=parfit_adm_q0q4 --password --verbose > parfit-$(date +\"%Y%m%d-%H:%M\").sql"
   },
   "license": "MIT",
   "dependencies": {
     "better-console": "^1.0.1",
     "dotenv": "^5.0.1",
+    "moment": "^2.22.1",
     "mz": "^2.7.0"
   }
 }
